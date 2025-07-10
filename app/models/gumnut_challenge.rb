@@ -1,0 +1,2 @@
+class GumnutChallenge < ApplicationRecord
+end
