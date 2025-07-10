@@ -1,2 +1,15 @@
 [tools]
 ruby = "latest"
+
+[tasks.install]
+description = "install dependencies"
+run = "bundle install"
+
+[tasks.lint]
+description = "lint Code"
+run = "bundle exec rubocop -A"
+
+[tasks.run]
+description = "run Code"
+run = "bundle exec rails s"
+
