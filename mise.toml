@@ -7,10 +7,18 @@ description = "check all dependencies"
 depends = ["install", "check-tools"]
 run = "echo TODO: check goes here"
 
+[tasks.lint]
+description = "lint"
+run = "npm run lint"
+
+[tasks."build:next"]
+description = "build next app"
+run = "npm run build"
+
 [tasks.build]
 description = "build all the things"
-depends = ["check"]
-run = "echo TODO: build goes here"
+depends = ["check", "lint", "build:next"]
+run = "echo lint and build"
 
 [tasks.clean]
 description = "clean up"
