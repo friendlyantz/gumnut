@@ -1,1 +1,147 @@
 @import "tailwindcss";
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Russo+One&display=swap');
+
+:root {
+  --neon-pink: #ff0080;
+  --neon-cyan: #00ffff;
+  --neon-purple: #8000ff;
+  --dark-bg: #1a1a2e;
+  --dark-card: #252542;
+  --light-bg: #2a2a4a;
+  --pink-bg: #b139ad;
+  --accent-gradient: linear-gradient(45deg, #ff0080, #8000ff, #00ffff);
+}
+
+body {
+  /* background: var(--light-bg); */
+  background: var(--pink-bg);
+  background-image:
+    radial-gradient(circle at 20% 50%, rgba(255, 0, 128, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(128, 0, 255, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 40% 80%, rgba(0, 255, 255, 0.1) 0%, transparent 50%);
+  color: #ffffff;
+  font-family: 'Orbitron', monospace;
+}
+
+.neon-text {
+  text-shadow:
+    0 0 3px currentColor,
+    0 0 3px currentColor,
+    0 0 30px currentColor,
+    0 0 10px currentColor;
+}
+
+.neon-border {
+  box-shadow:
+    0 0 5px var(--neon-cyan),
+    0 0 10px var(--neon-cyan),
+    0 0 20px var(--neon-cyan),
+    inset 0 0 5px rgba(0, 255, 255, 0.1);
+}
+
+.neon-button {
+  background: linear-gradient(45deg, transparent, rgba(255, 0, 128, 0.1), transparent);
+  border: 2px solid var(--neon-pink);
+  transition: all 0.3s ease;
+}
+
+.neon-button:hover {
+  background: linear-gradient(45deg, rgba(255, 0, 128, 0.2), rgba(128, 0, 255, 0.2), rgba(0, 255, 255, 0.2));
+  box-shadow:
+    0 0 10px var(--neon-pink),
+    0 0 20px var(--neon-pink),
+    0 0 30px var(--neon-pink);
+  transform: translateY(-2px);
+}
+
+.grid-pattern {
+  background-image:
+    linear-gradient(rgba(0, 255, 255, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 255, 255, 0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.russian-title {
+  font-family: 'Russo One', sans-serif;
+}
+
+/* Custom responsive breakpoint at 767px */
+@media (min-width: 767px) {
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+/* Header Styling */
+header {
+  position: relative;
+  z-index: 100;
+  backdrop-filter: blur(10px);
+}
+
+header::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--neon-cyan),
+    var(--neon-pink),
+    var(--neon-purple),
+    var(--neon-cyan),
+    transparent
+  );
+  opacity: 0.7;
+  z-index: 1;
+}
+
+header .container {
+  position: relative;
+}
+
+/* Modern Button Animations */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes borderGlow {
+  0%, 100% {
+    box-shadow: 0 0 5px var(--neon-cyan), 0 0 10px var(--neon-cyan);
+  }
+  50% {
+    box-shadow: 0 0 15px var(--neon-cyan), 0 0 20px var(--neon-cyan);
+  }
+}
+
+@keyframes borderPulse {
+  0%, 100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.animate-border-glow {
+  animation: borderGlow 2s ease-in-out infinite;
+}
+
+.animate-border-pulse {
+  animation: borderPulse 2s ease-in-out infinite;
+}
