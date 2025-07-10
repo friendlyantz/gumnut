@@ -14,6 +14,34 @@ mise run build
 
 ---
 
+## Gumnut Hackathon info
+
+### Event
+
+https://lu.ma/9cbthkwd
+
+> Gumnut multi-agent hackathon
+>
+> Thursday 10 July 17:30 - 20:30
+>
+> Cremorne Digital Hub
+
+### Hackathon Guide
+    
+https://docs.gumnut.dev/guides/hackathon.html
+
+### Dev
+
+https://hackathon.gumnut.dev/
+
+### Intro video
+
+[
+![
+      Gumnut Dev Hackathon Guide - Sam Thorogood
+    ](http://img.youtube.com/vi/R8WtpLrAQF4/0.jpg)
+](https://youtu.be/R8WtpLrAQF4)
+
 ## Setup
 
 ### 1. create a Next.js app
